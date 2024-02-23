@@ -6,6 +6,7 @@ int Sum(int a, int b);
 int Diff(int a, int b);
 int Prod(int a, int b);
 double Quot(int a, int b);
+int Pwr(int a, int b);
 
 void main()
 {
@@ -18,6 +19,8 @@ void main()
 	cout << a << " - " << b << " = " << Diff(a,b) << endl;
 	cout << a << " * " << b << " = " << Prod(a,b) << endl;
 	cout << a << " / " << b << " = " << Quot(a,b) << endl;
+	cout << a << " ^ " << b << " = " << Pwr(a,b) << endl;
+
 }
 int Sum(int a, int b)
 {
@@ -41,4 +44,14 @@ double Quot(int a, int b)
 {
 	//Quotient - частное
 	return (double)a / b;
+}
+
+int Pwr(int a, int b)
+{
+	int res = a;
+	for (int i = 0; i < b - 1; i++)
+	{
+		res = res * a;
+	}
+	return res;
 }
