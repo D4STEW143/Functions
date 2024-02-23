@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 using namespace std;
 
@@ -27,26 +27,26 @@ void main()
 	minValueIn(arr, n);
 	maxValueIn(arr, n);
 	Srt(arr, n);
-	cout << "Ââåäèòå ÷èñëî ñäâèãà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ ÑÐ´Ð²Ð¸Ð³Ð°: ";
 	cin >> move_number;
-	cout << "Ñäâèã âëåâî: " << endl;
+	cout << "Ð¡Ð´Ð²Ð¸Ð³ Ð²Ð»ÐµÐ²Ð¾: " << endl;
 	ShftLft(arr, n);
-	cout << "Ñäâèã âïðàâî: " << endl;
+	cout << "Ð¡Ð´Ð²Ð¸Ð³ Ð²Ð¿Ñ€Ð°Ð²Ð¾: " << endl;
 	ShftRght(arr, n);
 }
 
 void FillRand(int arr[], const int n, int minRand, int maxRand)
 {
-	//Çàïîëíÿåì ñëó÷àíûéìè ÷èñëàìè:
+	//Ð—Ð°Ð¿Ð¾Ð»Ð½ÑÐµÐ¼ ÑÐ»ÑƒÑ‡Ð°Ð½Ñ‹Ð¹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸:
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = minRand + rand() % (maxRand-minRand); //÷òîáû ïîïàñòü â ïðåäåë ìàêñðàíä
+		arr[i] = minRand + rand() % (maxRand-minRand); //Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð¿Ð°ÑÑ‚ÑŒ Ð² Ð¿Ñ€ÐµÐ´ÐµÐ» Ð¼Ð°ÐºÑÑ€Ð°Ð½Ð´
 	}
 }
 
 void Print(const int arr[], const int n)
 {
-	//âûâîä ìàññèâà 
+	//Ð²Ñ‹Ð²Ð¾Ð´ Ð¼Ð°ÑÑÐ¸Ð²Ð° 
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << "\t";
@@ -58,7 +58,7 @@ int Sum(int arr[])
 {
 	int sum_res;
 	sum_res = arr[0] + arr[1] + arr[2] + arr[3] + arr[4];
-	cout << "Ñóììà ýëåìåíòîâ ìàññèâà ðàâíà " << sum_res;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð° Ñ€Ð°Ð²Ð½Ð° " << sum_res;
 	cout << endl;
 	return sum_res;
 }
@@ -67,7 +67,7 @@ double Avrg(int arr[], const int n)
 {
 	double res_avrg;
 	res_avrg = (arr[0] + arr[1] + arr[2] + arr[3] + arr[4]) / n;
-	cout << "Ñðåäíå-àðèôìåòè÷åñêîå äàííîãî ìàññèâà ðàâíî " << res_avrg;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½Ðµ-Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ñ€Ð°Ð²Ð½Ð¾ " << res_avrg;
 	cout << endl;
 	return res_avrg;
 }
@@ -83,7 +83,7 @@ int minValueIn(int arr[], const int n)
 			min = arr[i];
 		}
 	}
-	cout << "Ìèíèìàëüíîå ÷èñëî ìàññèâà: " << min << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << min << endl;
 	return min;
 }
 
@@ -98,7 +98,7 @@ int maxValueIn(int arr[], const int n)
 			max = arr[i];
 		}
 	}
-	cout << "Ìàêñèìàëüíîå ÷èñëî ìàññèâà: " << max << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << max << endl;
 	return max;
 }
 
@@ -121,7 +121,7 @@ int Srt(int arr[], const int n)
 		if (swapped == false)
 			break;
 	}
-	cout << "Ñîðòèðîâêà ìàññèâà:" << endl;
+	cout << "Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð¼Ð°ÑÑÐ¸Ð²Ð°:" << endl;
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << "\t";
