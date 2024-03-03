@@ -2,10 +2,20 @@
 
 using namespace std;
 
+#define delimeter "\n------------------------------\n"
+#define tab delimeter
+
+
+const int ROWS = 3;
+const int COLS = 5;
 int move_number;
 
 void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(double arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand = 0, int MaxRand = 100);
 void Print(const int arr[], const int n);
+void Print(const double arr[], const int n);
+void Print(const int arr[ROWS][COLS], const int ROWS, const int COLS);
 int Sum(int arr[]);
 double Avrg(int arr[], const int n);
 int minValueIn(int arr[], const int n);
@@ -20,6 +30,20 @@ void main()
 	const int n = 5;
 	int arr[n];
 
+	const int m = 8;
+	double brr[m];
+
+	FillRand(brr, m);
+	Print(brr, m);
+
+	cout << delimeter << endl;
+
+	int i_arr_2[ROWS][COLS];
+	FillRand(i_arr_2, ROWS, COLS);
+	
+	cout << delimeter << endl;
+
+
 	FillRand(arr, n);
 	Print(arr, n);
 	Sum(arr);
@@ -33,6 +57,9 @@ void main()
 	ShftLft(arr, n);
 	cout << "Сдвиг вправо: " << endl;
 	ShftRght(arr, n);
+
+	cout << delimeter << endl;
+
 }
 
 void FillRand(int arr[], const int n, int minRand, int maxRand)
@@ -40,7 +67,30 @@ void FillRand(int arr[], const int n, int minRand, int maxRand)
 	//Заполняем случаныйми числами:
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = minRand + rand() % (maxRand-minRand); //чтобы попасть в предел максранд
+		arr[i] = minRand + rand() % (maxRand - minRand); //чтобы попасть в предел максранд
+	}
+}
+
+void FillRand(double arr[], const int n, int minRand, int maxRand)
+{
+	minRand *= 100;
+	maxRand *= 100;
+	//Заполняем случаныйми числами:
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = minRand + rand() % (maxRand - minRand); //чтобы попасть в предел максранд
+		arr[i] /= 100;
+	}
+}
+
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, int MaxRand)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = minRand + rand() % (MaxRand - minRand);
+		}
 	}
 }
 
@@ -52,6 +102,27 @@ void Print(const int arr[], const int n)
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
+}
+
+void Print(const double arr[], const int n)
+{
+	//вывод массива 
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
+void Print(const int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << endl;
+		}
+	}
 }
 
 int Sum(int arr[])
@@ -181,3 +252,4 @@ void ShftRght(int arr[], const int n)
 		cout << endl;
 	}
 }
+
